@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 void main() {
   runApp(const MyApp());
@@ -42,8 +43,38 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
       ),
-      body: const Center(
-        child: Text('GestureDetector'),
+      body: Center(
+        child: GestureDetector(
+          onTap: (){
+            print('On Tab Click');
+          },
+          onLongPress: (){
+            print('On Long Press Click');
+          },
+          onTapDown: (_){
+            print('On Tab Down Click');
+          },
+          onDoubleTap: (){
+            print('On Double Tab Click');
+          },
+          onTapUp: (_){
+            print('On Tab Up Click');
+          },
+          child: Container(
+            height: 150,
+            width: 150,
+            alignment: Alignment.center,
+            color: Colors.blue,
+            child: const Text(
+              'Container',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 22,
+                color: Colors.white,
+              ),
+            ),
+          ),
+        ),
       ),
     );
   }
